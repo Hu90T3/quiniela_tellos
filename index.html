@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Quiniela Tellos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        .seleccionado { background-color: red; }
+        .local { background-color: red; }
+        .empate { background-color: red; }
+        .visitante { background-color: red; }
+        .table-responsive {
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="row justify-content-center">
+            <div class="text-center text-white" style="background: #013D81;">
+                <h1 class="fs-1 fw-bolder pt-1">Quiniela Tellos</h1>
+                <span class="m-0 p-2 fs-4">Jornada 4 del 2024 Liga MX</span>
+            </div>
+
+            <div class="table-responsive">
+                <table id="tablaPartidos" class="table table-sm table-bordered">
+                    <tbody style="font-size:0.9rem" class="text-center">
+                
+                        <tr class="align-middle" id="tr1">
+                            <td data-tipo="local" onclick="toggleSeleccion(this)"><strong>L</strong></td>
+                            <td class="text-start">
+                                <img height="25px" src="assets/images/atleticosl.png" />San Luis</td>
+                            <td data-tipo="empate" onclick="toggleSeleccion(this)"><strong>E</strong></td>
+                            <td class="text-end">
+                                <span>Tigres</span>
+                                <img height="25px" src="assets/images/tigres.png" />
+                            </td>
+                            <td data-tipo="visitante" onclick="toggleSeleccion(this)"><strong>V</strong></td>
+                        </tr>
+                    
+                        <tr class="align-middle" id="tr2">
+                            <td data-tipo="local" onclick="toggleSeleccion(this)"><strong>L</strong></td>
+                            <td class="text-start">
+                                <img height="25px" src="assets/images/monterrey.png" />Monterrey</td>
+                            <td data-tipo="empate" onclick="toggleSeleccion(this)"><strong>E</strong></td>
+                            <td class="text-end">
+                                <span>Queretaro</span>
+                                <img height="25px" src="assets/images/queretaro.png" />
+                            </td>
+                            <td data-tipo="visitante" onclick="toggleSeleccion(this)"><strong>V</strong></td>
+                        </tr>
+        
+                        <tr class="align-middle" id="tr3">
+                            <td data-tipo="local" onclick="toggleSeleccion(this)"><strong>L</strong></td>
+                            <td class="text-start">
+                                <img height="25px" src="assets/images/juarez.png" />Juarez</td>
+                            <td data-tipo="empate" onclick="toggleSeleccion(this)"><strong>E</strong></td>
+                            <td class="text-end">
+                                <span>Americ<span>
+                                <img height="25px" src="assets/images/america.png" />
+                            </td>
+                            <td data-tipo="visitante" onclick="toggleSeleccion(this)"><strong>V</strong></td>
+                        </tr>
+        
+                        <tr class="align-middle" id="tr4">
+                            <td data-tipo="local" onclick="toggleSeleccion(this)"><strong>L</strong></td>
+                            <td class="text-start">
+                                <img height="25px" src="assets/images/cruzazul.png" />Cruz Azul</td>
+                            <td data-tipo="empate" onclick="toggleSeleccion(this)"><strong>E</strong></td>
+                            <td class="text-end">
+                                <span>Tijuana</span>
+                                <img height="25px" src="assets/images/tijuana.png" />
+                            </td>
+                            <td data-tipo="visitante" onclick="toggleSeleccion(this)"><strong>V</strong></td>
+                        </tr>
+        
+                        <tr class="align-middle" id="tr5">
+                            <td data-tipo="local" onclick="toggleSeleccion(this)"><strong>L</strong></td>
+                            <td class="text-start">
+                                <img height="25px" src="assets/images/mazatlan.png" />Mazatlan</td>
+                            <td data-tipo="empate" onclick="toggleSeleccion(this)"><strong>E</strong></td>
+                            <td class="text-end">
+                                <span>Leon</span>
+                                <img height="25px" src="assets/images/leon.png" />
+                            </td>
+                            <td data-tipo="visitante" onclick="toggleSeleccion(this)"><strong>V</strong></td>
+                        </tr>
+        
+                        <tr class="align-middle" id="tr6">
+                            <td data-tipo="local" onclick="toggleSeleccion(this)"><strong>L</strong></td>
+                            <td class="text-start">
+                                <img height="25px" src="assets/images/guadalajara.png" />Chivas</td>
+                            <td data-tipo="empate" onclick="toggleSeleccion(this)"><strong>E</strong></td>
+                            <td class="text-end">
+                                <span>Toluca</span>
+                                <img height="25px" src="assets/images/toluca.png" />
+                            </td>
+                            <td data-tipo="visitante" onclick="toggleSeleccion(this)"><strong>V</strong></td>
+                        </tr>
+        
+                        <tr class="align-middle" id="tr7">
+                            <td data-tipo="local" onclick="toggleSeleccion(this)"><strong>L</strong></td>
+                            <td class="text-start">
+                                <img height="25px" src="assets/images/pachuca.png" />Pachuca</td>
+                            <td data-tipo="empate" onclick="toggleSeleccion(this)"><strong>E</strong></td>
+                            <td class="text-end">
+                                <span>Atlas</span>
+                                <img height="25px" src="assets/images/atlas.png" />
+                            </td>
+                            <td data-tipo="visitante" onclick="toggleSeleccion(this)"><strong>V</strong></td>
+                        </tr>
+        
+                        <tr class="align-middle" id="tr8">
+                            <td data-tipo="local" onclick="toggleSeleccion(this)"><strong>L</strong></td>
+                            <td class="text-start">
+                                <img height="25px" src="assets/images/santos.png" />Santos</td>
+                            <td data-tipo="empate" onclick="toggleSeleccion(this)"><strong>E</strong></td>
+                            <td class="text-end">
+                                <span>Puebla</span>
+                                <img height="25px" src="assets/images/puebla.png" />
+                            </td>
+                            <td data-tipo="visitante" onclick="toggleSeleccion(this)"><strong>V</strong></td>
+                        </tr>
+        
+                        <tr class="align-middle" id="tr9">
+                            <td data-tipo="local" onclick="toggleSeleccion(this)"><strong>L</strong></td>
+                            <td class="text-start">
+                                <img height="25px" src="assets/images/pumas.png" />Pumas</td>
+                            <td data-tipo="empate" onclick="toggleSeleccion(this)"><strong>E</strong></td>
+                            <td class="text-end">
+                                <span>Necaxa</span>
+                                <img height="25px" src="assets/images/necaxa.png" />
+                            </td>
+                            <td data-tipo="visitante" onclick="toggleSeleccion(this)"><strong>V</strong></td>
+                        </tr>
+        
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div>
+                <div class="card">
+                    <div class="card-header">Informes</div>
+                    <div class="card-body">
+                        <a href="#" onclick="enviar('informes')">Da clic aquí para enviarnos mensaje a WhatsApp</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-1">
+                <div class="card">
+                    <div class="card-header">Precio</div>
+                    <div class="card-body">
+                        <p class="card-title">Precio: $10.00</p>
+                        <strong><p class="card-title">Total a pagar: $<span id="totalPrecio">0</span></p></strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <label for="lblQuiniela">Nombre de la quiniela</label>
+                <input type="text" class="form-control" id="lblQuiniela">
+            </div>
+        </div>
+
+        <div class="row mt-2 mb-2">
+            <div class="col">
+                <button type="button" class="btn btn-danger btn-sm btn-block" onclick="calcularPrecio()"><i class="fas fa-trash"></i> Calcular</button>
+            </div>
+            <div class="col">
+                <button type="submit" class="btn btn-primary btn-sm btn-block" onclick="mostrarSeleccionados()">Agregar</button>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-warning btn-sm btn-block" onclick="cambiarColorAleatorio()">Aleatorio</button>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-secondary btn-sm btn-block" onclick="reiniciarColores()"><i class="fas fa-trash"></i> Reiniciar</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <button type="submit" class="btn btn-success col-12" onclick="enviar('enviar')"></i> Enviar</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 mt-2">
+                <div class="id" id="contenedorAlertas"></div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="quiniela.js"></script>
+</html>
