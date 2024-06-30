@@ -16,13 +16,13 @@ function reiniciarColores() {
 }
 
 function toggleSeleccion(celda) {
+    var fila = celda.parentNode;
     var tipo = celda.getAttribute('data-tipo');
-
-    if (celda.style.backgroundColor === 'red') {
-        celda.style.backgroundColor = '';
-    } else {
-        celda.style.backgroundColor = 'red';
+    var celdas = fila.querySelectorAll('td[data-tipo]');
+    for (var i = 0; i < celdas.length; i++) {
+        celdas[i].style.backgroundColor = '';
     }
+    celda.style.backgroundColor = 'red';
 }
 
 function cambiarColorAleatorio() {
@@ -47,7 +47,7 @@ function cambiarColorAleatorio() {
 var cantidadesCeldasRojo = {};
 
 function calcularPrecio() {
-    var precio = 10;
+    var precio = 30;
     var multiplicador = 1;
 
     var filas = document.querySelectorAll('#tablaPartidos tbody tr');
