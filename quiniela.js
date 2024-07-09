@@ -47,7 +47,7 @@ function cambiarColorAleatorio() {
 var cantidadesCeldasRojo = {};
 
 function calcularPrecio() {
-    var precio = 30;
+    var precio = 20;
     var multiplicador = 1;
 
     var filas = document.querySelectorAll('#tablaPartidos tbody tr');
